@@ -1,4 +1,5 @@
-# Your-First-C-TDD-Project: Simple Build System with TDD Approac
+# Your-First-C-TDD-Project: Simple Build System with TDD Approach
+
 ## Overview
 
 Your-First-C-TDD-Project exemplifies Continuous Test-Driven Development by showcasing a simple addition test in C, seamlessly integrated with Python for automated testing and managed through efficient Makefiles, fostering an iterative and robust development process.
@@ -32,9 +33,28 @@ This project demonstrates a simple build system for a C program using a Makefile
 
 ## Test Objectives
 
-- **C Program Functionality Testing:**
-  - Verify that the C program performs addition correctly.
-  - Test Method: The Python script `my_C_test.py` runs the compiled C program (`my_program`) and checks if the addition result is as expected.
+1. **C Program Functionality Testing:**
+   - Verify that the C program performs addition correctly.
+   - Test Method: The Python script `my_C_test.py` runs the compiled C program (`my_program`) and checks if the addition result is as expected.
+
+   ![Test Pass](Test_pass.PNG) 
+
+2. **Testing Failure Scenarios:**
+   - To demonstrate test failures, a deliberate error was introduced in the C code (`main.c`).
+   - The `add` function in `main.c` was modified to produce an incorrect result.
+   - Running the Python test script `my_C_test.py` after compiling the modified C code results in a test failure due to the intentional error.
+
+   **Example Output of Failed Test:**
+   ```plaintext
+   Traceback (most recent call last):
+     File "my_C_test.py", line 12, in <module>
+       test_c_program()
+     File "my_C_test.py", line 8, in test_c_program
+       assert output == expected_output, f"Expected: {expected_output}, Got: {output}"
+   AssertionError: Expected: Result: 12, Got: Result: 13
+   ```
+
+   ![Test Failed](Test_Fail.PNG) 
 
 ## How It Works
 
@@ -87,3 +107,20 @@ project_folder/
 ## Conclusion
 
 This README.md provides an overview of the project's structure, objectives, and rationale for using specific files and approaches. It emphasizes automation, TDD principles, separation of concerns, and clear test objectives for maintaining code quality and functionality validation.
+
+## What Next?
+
+ 10 different types of tests that can be conducted using Python:
+
+1. **Unit Tests:** Test individual units or components of the code in isolation.
+2. **Integration Tests:** Test how different components/modules work together.
+3. **Functional Tests:** Test the functionality of the entire system or application.
+4. **Regression Tests:** Test to ensure that new code changes do not break existing functionalities.
+5. **Performance Tests:** Test the performance and efficiency of the code under various conditions.
+6. **Security Tests:** Test for vulnerabilities and security risks in the code.
+7. **Stress Tests:** Test the behavior of the system under high load or stress conditions.
+8. **Boundary Tests:** Test the behavior of the code at boundary conditions and edge cases.
+9. **Compatibility Tests:** Test the compatibility of the code with different platforms or environments.
+10. **Usability Tests:** Test the usability and user experience aspects of the application or system.
+
+These are just a few examples of the types of tests that can be conducted using Python. Depending on the nature of your project, you may choose to conduct one or more of these tests to ensure the quality, reliability, and performance of your codebase.
